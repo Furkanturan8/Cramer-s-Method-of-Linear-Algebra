@@ -132,21 +132,30 @@ public class cramerV2 {
         float detResult_X = ((X[0][0]*X[1][1]*X[2][2]) + (X[0][1]*X[1][2]*X[2][0]) + (X[0][2]*X[1][0]*X[2][1])) - ((X[0][2]*X[1][1]*X[2][0]) + (X[0][0]*X[1][2]*X[2][1]) + (X[0][1]*X[1][0]*X[2][2]));
         float detResult_A = ((A3[0][0]*A3[1][1]*A3[2][2]) + (A3[0][1]*A3[1][2]*A3[2][0]) + (A3[0][2]*A3[1][0]*A3[2][1])) - ((A3[0][2]*A3[1][1]*A3[2][0]) + (A3[0][0]*A3[1][2]*A3[2][1]) + (A3[0][1]*A3[1][0]*A3[2][2]));
         float x = detResult_X/detResult_A;
-            System.out.println("detResult_X : " + detResult_X);
-            System.out.println("detResult_A : " + detResult_A);
-            System.out.println("x:"+x);
-
+          
         float detResult_Y = ((Y[0][0]*Y[1][1]*Y[2][2]) + (Y[0][1]*Y[1][2]*Y[2][0]) + (Y[0][2]*Y[1][0]*Y[2][1])) - ((Y[0][2]*Y[1][1]*Y[2][0]) + (Y[0][0]*Y[1][2]*Y[2][1]) + (Y[0][1]*Y[1][0]*Y[2][2]));
         float y = detResult_Y/detResult_A;
-            System.out.println("\ndetResult_Y : " + detResult_Y);
-            System.out.println("detResult_A : " + detResult_A);
-            System.out.println("y:"+y);
-
+            
         float detResult_Z = ((Z[0][0]*Z[1][1]*Z[2][2]) + (Z[0][1]*Z[1][2]*Z[2][0]) + (Z[0][2]*Z[1][0]*Z[2][1])) - ((Z[0][2]*Z[1][1]*Z[2][0]) + (Z[0][0]*Z[1][2]*Z[2][1]) + (Z[0][1]*Z[1][0]*Z[2][2]));
         float z = detResult_Z/detResult_A;
-            System.out.println("\ndetResult_Z : " + detResult_Z);
-            System.out.println("detResult_A : " + detResult_A);
-            System.out.println("z:"+z);
+            
+            if(detResult_A == 0){
+                System.out.println("Sonsuz Çözüm vardır veya Çözülemez!");
+            }
+            else {
+                System.out.println("detResult_X : " + detResult_X);
+                System.out.println("detResult_A : " + detResult_A);
+                System.out.println("x:"+x);
+
+                System.out.println("\ndetResult_Y : " + detResult_Y);
+                System.out.println("detResult_A : " + detResult_A);
+                System.out.println("y:"+y);
+
+                System.out.println("\ndetResult_Z : " + detResult_Z);
+                System.out.println("detResult_A : " + detResult_A);
+                System.out.println("z:"+z);
+            }
+
     }
 
     private void findXY(){
